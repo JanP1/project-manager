@@ -8,11 +8,11 @@ export interface IProject extends Document {
   updatedAt: Date;
 }
 
-const ProjectSchema: Schema<IProject> = new Schema(
+const ProjectSchema = new Schema<IProject>(
   {
     name: { type: String, required: true },
-    description: { type: String },
-    status: { type: String, enum: ['active', 'completed', 'archived'], default: 'active' }
+    description: String,
+    status: { type: String, enum: ['active', 'completed', 'archived'], default: 'active' },
   },
   { timestamps: true }
 );

@@ -4,9 +4,10 @@ import { connectToDatabase } from './lib/dbConnection.ts';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
-
-// Dynamic import of routes
-const projectsRouter = await import('./routes/projects.ts');
+// Dynamic imports of routes
+const projectRouter = await import('./routes/projectRouter.ts');
+const columnRouter = await import('./routes/columnRouter.ts');
+const taskRouter = await import('./routes/taskRouter.ts');
 
 async function start() {
   // Load environment variables
@@ -28,8 +29,10 @@ async function start() {
     })
   );
 
-  // Routes
-  app.use('/projects', projectsRouter.default);
+  // Routes mounting
+  app.use('/projects', projectRouter.default);
+  app.use('/columns', columnRouter.default);
+  app.use('/tasks', taskRouter.default);
 
   // Start server
   const port = process.env.HTTP_PORT || 3000;
