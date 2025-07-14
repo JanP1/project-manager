@@ -1,4 +1,5 @@
 import './App.css'
+import KanbanContainer from './components/kanban/KanbanContainer'
 import ProjectBar from './components/ProjectBar'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <div className='main-grid-container'>
 
         <ProjectBar/>
+        <KanbanContainer/>
 
           
 

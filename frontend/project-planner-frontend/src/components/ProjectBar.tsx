@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import "../assets/styles/ProjectBar.css";
 import ProjectCard from "./ProjectCard";
 import StatusPicker from "./StatusPicker";
+import useStatusStore from "../stores/projectStatusStore";
+import useCurrentProjectStore from "../stores/useCurrentProjectStore"; 
 
 interface Project {
   _id: string;
@@ -15,6 +17,13 @@ interface Project {
 
 export default function ProjectBar() {
   const [projects, setProjects] = useState<Project[]>([]);
+  const { active, finished, archived } = useStatusStore();
+  const setProjectId = useCurrentProjectStore((state) => state.setProjectId);
+
+  let selectedStatus = "";
+  if (active) selectedStatus = "active";
+  else if (finished) selectedStatus = "finished";
+  else if (archived) selectedStatus = "archived";
 
   useEffect(() => {
     fetch("http://localhost:5001/projects")
@@ -28,15 +37,25 @@ export default function ProjectBar() {
       .catch((err) => console.error("Failed to fetch projects:", err));
   }, []);
 
+  const filteredProjects = selectedStatus
+    ? projects.filter((project) => project.status === selectedStatus)
+    : projects;
+
   return (
     <div className="project-bar-container">
       <div className="title-status-container">
         <div className="bar-title">Projects</div>
-        <StatusPicker/>
+        <StatusPicker />
       </div>
       <div className="projects-scrollable-container">
-        {projects.map((project) => (
-          <ProjectCard key={project._id} name={project.name} />
+        {filteredProjects.map((project) => (
+          <div
+            key={project._id}
+            onClick={() => setProjectId(project._id)}
+            style={{ cursor: "pointer" }} // pointer cursor for UX
+          >
+            <ProjectCard name={project.name} />
+          </div>
         ))}
       </div>
     </div>

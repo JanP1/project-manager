@@ -1,0 +1,140 @@
+.kanban-container {
+  margin-left: 10px;
+  border-radius: 10px;
+  background-color: #253547;
+  grid-column: 2;
+  height: 100%;
+  width: calc(100% - 10px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.kanban-column-container {
+  height: calc(100% - 20px);
+  width: calc(100% - 20px);
+  padding: 10px;
+  display: flex;
+  /* background-color: lightgray; */
+
+}
+.select-project-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  width: 500px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  color: #2d3f54;
+
+  user-select: none;
+  -webkit-user-select: none;
+  font-size: 40px;
+}
+
+.kanban-column {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  height: calc(100% - 10px);
+  border-radius: 10px;
+  min-width: 350px;
+  max-width: 350px;
+  background-color: black;
+  overflow: hidden;
+}
+.kanban-column-name {
+  margin-top: 10px;
+  margin-left: 20px;
+  height: 70px;
+  color: lightblue;
+  font-size: 23px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.column-task-container {
+  margin: 20px;
+  height: 100%;
+  width: calc(100%-40px);
+  border-radius: 10px;
+  background-color: #0d131a;
+  overflow-y: auto;
+}
+
+
+.card {
+  margin: 10px;
+  width: 250px;
+  height: 140px;
+  border-radius: 20px;
+  padding: 2px; 
+  background-color: #264566;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: white; /* ensure text is readable */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+
+.card-content {
+  background: #112b47;
+  border-radius: 17px;
+  width: 100%;
+  height: 100%;
+  padding: 15px;
+  font-size: 14px; /* bigger font for readability */
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  transition: all 0.2s ease;
+}
+
+.card-content:hover {
+  background-color: #255385;
+  
+}
+.card-content h4 {
+  color: white;
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.2;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.card-content p {
+  margin: 0;
+  font-size: 14px;
+  color: lightblue;
+  flex-grow: 1;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+
+.no-tasks-info {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: yellow; */
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+  color: #1c2b3b;
+}
