@@ -3,6 +3,15 @@
   flex-direction: column;
 }
 
+.status-button-active {
+  margin-right: 10px;
+  background-color: transparent;
+  color: lightblue;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: none;
+  cursor: pointer;
+
+}
 .status-button-inactive {
   margin-right: 10px;
   background-color: transparent;
