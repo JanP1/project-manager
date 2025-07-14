@@ -1,0 +1,19 @@
+.status-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.status-button-inactive {
+  margin-right: 10px;
+  background-color: transparent;
+  color: rgba(100, 200, 255, 0.2);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  border: none;
+  cursor: pointer;
+
+}
+
+.status-button-inactive:hover {
+  color: rgba(100, 200, 255, 0.5);
+
+}

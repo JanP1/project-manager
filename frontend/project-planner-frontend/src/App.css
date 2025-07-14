@@ -1,0 +1,29 @@
+body{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  margin: 0;
+  background-color: #17222e;
+}
+
+/* The main background of the SPA */
+.spa-layout-container {
+  position: relative;
+  margin: 10px;
+  width: calc(100% - 20px);  /* Subtract margins */
+  height: calc(100vh - 20px);
+  display: flex;
+  justify-content: center;
+
+  /* background-color: #17222e; */
+  overflow: hidden;
+}
+
+.main-grid-container {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 10fr;
+
+}
