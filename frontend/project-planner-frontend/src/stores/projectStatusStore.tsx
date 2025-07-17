@@ -2,34 +2,34 @@ import { create } from 'zustand';
 
 interface StatusState {
   active: boolean;
-  finished: boolean;
+  completed: boolean;
   archived: boolean;
 
   setActive: () => void;
-  setFinished: () => void;
+  setCompleted: () => void;
   setArchived: () => void;
 }
 
 const useStatusStore = create<StatusState>((set) => ({
   active: true,
-  finished: false,
+  completed: false,
   archived: false,
 
   setActive: () => set(() => ({
     active: true,
-    finished: false,
+    completed: false,
     archived: false,
   })),
   
-  setFinished: () => set(() => ({
+  setCompleted: () => set(() => ({
     active: false,
-    finished: true,
+    completed: true,
     archived: false,
   })),
   
   setArchived: () => set(() => ({
     active: false,
-    finished: false,
+    completed: false,
     archived: true,
   })),
 }));

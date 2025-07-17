@@ -17,12 +17,12 @@ interface Project {
 
 export default function ProjectBar() {
   const [projects, setProjects] = useState<Project[]>([]);
-  const { active, finished, archived } = useStatusStore();
+  const { active, completed, archived } = useStatusStore();
   const setProjectId = useCurrentProjectStore((state) => state.setProjectId);
 
   let selectedStatus = "";
   if (active) selectedStatus = "active";
-  else if (finished) selectedStatus = "finished";
+  else if (completed) selectedStatus = "completed";
   else if (archived) selectedStatus = "archived";
 
   useEffect(() => {

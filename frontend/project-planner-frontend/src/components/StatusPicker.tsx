@@ -2,7 +2,7 @@ import "../assets/styles/StatusPicker.css";
 import useStatusStore from "../stores/projectStatusStore";
 
 export default function StatusPicker() {
-  const { active, finished, archived, setActive, setFinished, setArchived } = useStatusStore();
+  const { active, completed, archived, setActive, setCompleted, setArchived } = useStatusStore();
 
   return (
     <div className="status-button-container">
@@ -14,10 +14,10 @@ export default function StatusPicker() {
       </button>
 
       <button
-        className={finished ? "status-button-active" : "status-button-inactive"}
-        onClick={setFinished}
+        className={completed ? "status-button-active" : "status-button-inactive"}
+        onClick={setCompleted}
       >
-        finished
+        completed
       </button>
 
       <button
