@@ -22,6 +22,8 @@ export default function KanbanColumn({ columnName, tasks }: KanbanColumnProps) {
           <KanbanCard key={task._id} title={task.title} description={task.description} />
         ))}
       </div>
+
+      
     </div>
   );
 }
